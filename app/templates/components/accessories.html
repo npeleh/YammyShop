@@ -1,0 +1,36 @@
+<div class="section_product">
+	<div class="section_product_containerAccessories">
+		<div class="section_head">
+			<div class="name_category">
+				<h1 class="nav_font">Aксесуари</h1>
+			</div>
+			<div class="nav_navigation">
+				<div id="nav_popular">по популярності</div>
+				<div id="nav_cheap">спочатку дешевше</div>
+				<div id="nav_name">по назві</div>
+			</div>
+		</div>
+		<div class="nav_contaiter">
+			<div class="nav_container_boxAccessories nav_font">
+				<div class="font_head">Колір</div>
+				<div class="filter_color">
+					<a href="#" id="yellow" title="Жовтий"></a>
+					<a href="#" id="gray" title="Сірий"></a>
+				</div>
+			</div>
+			<div class="nav_productAccessories">
+				<div class="catalogCard" ng-repeat="item in accessories.catalogA">
+					<div class="catalogImg">
+						<img ng-src="{{item.src}}">
+					</div>
+					<div class="info">
+						<p>{{item.name}}</p>
+						<span class="first">{{item.price}} грн</span><span class="second">{{item.in_stock}}</span>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>

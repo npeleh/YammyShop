@@ -1,0 +1,70 @@
+<div class="section_product">
+	<div class="section_product_containerW">
+		<div class="section_head">
+			<div class="name_category">
+				<h1 class="nav_font">Жінкам</h1>
+			</div>
+			<div class="nav_navigation">
+				<div id="nav_popular">по популярності</div>
+				<div id="nav_cheap">спочатку дешевше</div>
+				<div id="nav_name">по назві</div>
+			</div>
+		</div>
+		<div class="nav_contaiter">
+			<div class="nav_container_boxW nav_font">
+				<div class="font_head">Ціна, грн</div>
+				<div class="filter_price_inputs">
+					<input type="text" maxlength="6" value="350" id="minPrice">
+					<i class="filter_price_sep"></i>
+					<input type="text" maxlength="6" value="2500" id="maxPrice">
+					<button id="btn_sabmit" type="submit">OK</button>
+				</div><br>
+				<div class="font_head">Колір</div>
+				<div class="filter_color">
+					<a href="#" id="yellow" title="Жовтий"></a>
+					<a href="#" id="gray" title="Сірий"></a>
+					<a href="#" id="blue" title="Синій"></a>
+					<a href="#" id="red" title="Червоний"></a>
+					<a href="#" id="purple" title="Фіолетовий"></a>
+					<a href="#" id="green" title="Зелений"></a>
+					<a href="#" id="brown" title="Коричневий"></a>
+					<a href="#" id="pink" title="Рожевий"></a>
+					<a href="#" id="white" title="Білий"></a>
+					<a href="#" id="black" title="Чорний"></a>
+				</div><br>
+				<div class="font_head">Бренд</div>
+				<div class="filter_size">
+					<ul>
+						<li><a href=""><input type="checkbox"> Adidas <sup>2</sup></a></li>
+						<li><a href=""><input type="checkbox"> Converse <sup>3</sup></a></li>
+						<li><a href=""><input type="checkbox"> New Balance <sup>3</sup></a></li>
+						<li><a href=""><input type="checkbox"> Polo <sup>2</sup></a></li>
+						<li><a href=""><input type="checkbox"> Puma <sup>3</sup></a></li>
+						<li><a href=""><input type="checkbox"> Columbia <sup>1</sup></a></li>
+						<li><a href=""><input type="checkbox"> Reebok <sup>2</sup></a></li>
+					</ul>
+				</div><br>
+				<div class="filter_brands">
+					<ul>
+						<li><a href=""><input type="checkbox"> Акція <sup>2</sup></a></li>
+						<li><a href=""><input type="checkbox"> Новинка <sup>3</sup></a></li>
+						<li><a href=""><input type="checkbox"> Хіт <sup>1</sup></a></li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="nav_productW">
+				<div class="catalogCard" ng-repeat="item in woman.catalogW">
+					<div class="catalogImg">
+						<img ng-src="{{item.src}}">
+					</div>
+					<div class="info">
+						<p>{{item.name}}</p>
+						<span class="first">{{item.price}} грн</span><span class="second">{{item.in_stock}}</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+<div class="section_product">
+	<div class="section_product_containerFootwear">
+		<div class="section_head">
+			<div class="name_category">
+				<h1 class="nav_font">Взуття</h1>
+			</div>
+			<div class="nav_navigation">
+				<div id="nav_popular">по популярності</div>
+				<div id="nav_cheap">спочатку дешевше</div>
+				<div id="nav_name">по назві</div>
+			</div>
+		</div>
+		<div class="nav_contaiter">
+			<div class="nav_container_boxFootwear nav_font">
+				<div class="filter_brands">
+					<ul>
+						<li><a href=""><input type="checkbox"> Новинка <sup>3</sup></a></li>
+						<li><a href=""><input type="checkbox"> Хіт <sup>1</sup></a></li>
+					</ul>
+				</div><br>
+				<div class="font_head">Бренд</div>
+				<div class="filter_size">
+					<ul>
+						<li><a href=""><input type="checkbox"> Columbia <sup>1</sup></a></li>
+						<li><a href=""><input type="checkbox"> Reebok <sup>2</sup></a></li>
+					</ul>
+				</div><br>
+				<div class="font_head">Ціна, грн</div>
+				<div class="filter_price_inputs">
+					<input type="text" maxlength="6" value="350" id="minPrice">
+					<i class="filter_price_sep"></i>
+					<input type="text" maxlength="6" value="2500" id="maxPrice">
+					<button id="btn_sabmit" type="submit">OK</button>
+				</div>
+			</div>
+			<div class="nav_productFootwear">
+				<div class="catalogCard" ng-repeat="item in shoes.catalogS">
+					<div class="catalogImg">
+						<img ng-src="{{item.src}}">
+					</div>
+					<div class="info">
+						<p>{{item.name}}</p>
+						<span class="first">{{item.price}} грн</span><span class="second">{{item.in_stock}}</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
