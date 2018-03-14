@@ -71,7 +71,7 @@ gulp.task('build', ['styles', 'uglify', 'html', 'image']);
 
 
 gulp.task('watch', function () {
-	gulp.watch('app/style/**/*.scss', ['styles']);
+	gulp.watch('app/style/**/*.css', ['styles']);
 	//	gulp.watch('app/templates/**/*.jade', ['jade']);
 	gulp.watch('app/templates/**/*.html', ['html']);
 	gulp.watch('app/img/**/*', ['image']);
