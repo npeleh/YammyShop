@@ -5,27 +5,42 @@
 				<h1 class="nav_font">Aксесуари</h1>
 			</div>
 			<div class="nav_navigation">
-				<div id="nav_popular">по популярності</div>
-				<div id="nav_cheap">спочатку дешевше</div>
-				<div id="nav_name">по назві</div>
+				<div id="nav_popular" class="nav_btn" ng-click="accessories.popular('id')">по популярності</div>
+				<div id="nav_cheap" class="nav_btn" ng-click="accessories.cheap('price')">спочатку дешевше</div>
+				<div id="nav_name" class="nav_btn" ng-click="accessories.name('name')">по назві</div>
 			</div>
 		</div>
+		<nav id="filters">
+			<div id="menuToggleFilter">
+				<input type="checkbox" class="checkInput">
+				<span class="X"></span>
+				<span class="X"></span>
+				<span class="X"></span>
+				<ul id="menuFilter">
+					<div class="font_head">Колір</div>
+					<div class="filter_color">
+						<a class="color" id="yellow" title="Жовтий" ng-click="accessories.color('yellow')"></a>
+						<a class="color" id="gray" title="Сірий" ng-click="accessories.color('gray')"></a>
+					</div>
+				</ul>
+			</div>
+		</nav>
 		<div class="nav_contaiter">
 			<div class="nav_container_boxAccessories nav_font">
 				<div class="font_head">Колір</div>
 				<div class="filter_color">
-					<a href="#" id="yellow" title="Жовтий"></a>
-					<a href="#" id="gray" title="Сірий"></a>
+					<a class="color" id="yellow" title="Жовтий" ng-click="accessories.color('yellow')"></a>
+					<a class="color" id="gray" title="Сірий" ng-click="accessories.color('gray')"></a>
 				</div>
 			</div>
 			<div class="nav_productAccessories">
-				<div class="catalogCard" ng-repeat="item in accessories.catalogA">
-					<div class="catalogImg">
-						<img ng-src="{{item.src}}">
+				<div class="catalogCard" ng-repeat="item in accessories.catalogA | filter: {'color':accessories.myColor} | orderBy:accessories.myName | orderBy:accessories.myPopular | orderBy:accessories.myCheap">
+					<div class="catalogImg ">
+						<img ng-src="{{item.src}} ">
 					</div>
-					<div class="info">
+					<div class="info ">
 						<p>{{item.name}}</p>
-						<span class="first">{{item.price}} грн</span><span class="second">{{item.in_stock}}</span>
+						<span class="first ">{{item.price}} грн</span><span class="second ">{{item.in_stock}}</span>
 					</div>
 				</div>
 

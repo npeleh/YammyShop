@@ -5,6 +5,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 .header {
 	width: 100%;
 	height: 100px;
@@ -261,7 +265,36 @@
 	border-radius: 4px;
 	border: 1px solid #e5e5e5;
 	margin-bottom: 100px;
-	background-color: azure;
+}
+
+.popular_categories h2 {
+	width: 230px;
+	margin: 20px auto;
+}
+
+.popular_container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.popular_categories .box {
+	width: 150px;
+	height: 150px;
+	margin: 0 10px 10px 10px;
+	cursor: pointer;
+}
+
+.popular_categories .box_img {
+	width: 150px;
+	height: 115px;
+	text-align: center;
+}
+
+.popular_categories .box_img p {
+	margin-top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
 }
 
 .main_discount {
@@ -320,7 +353,8 @@
 	line-height: 120px;
 }
 
-.logo8 {
+.logo4,
+#mainMenu {
 	display: none;
 }
 
@@ -367,13 +401,13 @@
 
 .footer {
 	width: 100%;
-	height: 311px;
+	min-height: 311px;
 	background-color: #50b3a2;
 }
 
 .footer_container {
 	width: 95%;
-	height: 251px;
+	min-height: 251px;
 	margin: 0 auto;
 	padding: 30px 0;
 	display: -webkit-box;
@@ -530,8 +564,8 @@
 
 .section_head {
 	width: 100%;
-	height: 80px;
-	padding-top: 30px;
+	height: 60px;
+	padding-top: 10px;
 	margin-bottom: 15px;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -543,6 +577,7 @@
 
 .name_category {
 	width: 20%;
+	line-height: 60px;
 }
 
 .nav_navigation {
@@ -554,6 +589,7 @@
 	display: flex;
 	background-color: #fafafa;
 	font-family: Arial, Helvetica, sans-serif;
+	cursor: pointer;
 }
 
 .nav_contaiter {
@@ -602,7 +638,7 @@
 }
 
 .nav_productAccessories {
-	min-height: 400px;
+	min-height: 380px;
 }
 
 .nav_productFootwear {
@@ -621,6 +657,11 @@
 	color: #000;
 }
 
+#nav_popular {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
 #nav_popular,
 #nav_cheap {
 	width: 38%;
@@ -628,6 +669,8 @@
 
 #nav_name {
 	width: 26%;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 #nav_popular,
@@ -682,20 +725,23 @@
 }
 
 .filter_price_inputs #minPrice,
-.filter_price_inputs #maxPrice,
-.filter_price_inputs #btn_sabmit {
+.filter_price_inputs #maxPrice {
+	/*.filter_price_inputs #btn_sabmit {*/
 	width: 60px;
 	height: 28px;
 	border-radius: 5px;
-	font-size: 16px;
+	font-size: 14px;
 	margin: 0 1px;
 }
 
 .filter_price_inputs #btn_sabmit {
+	display: none;
+	/*
 	background-color: #fff;
 	color: #50b3a2;
 	border: 1px solid #50b3a2;
 	cursor: pointer;
+*/
 }
 
 .filter_price_inputs #maxPrice:focus,
@@ -708,6 +754,10 @@
 	outline: none;
 	background-color: #50b3a2;
 	color: #fff;
+}
+
+#filters {
+	display: none;
 }
 
 .nav_container_box .filter_color,
@@ -732,12 +782,17 @@
 .filter_color #white,
 .filter_color #black,
 .filter_color #brown,
-.filter_color #pink {
+.filter_color #pink,
+.filter_color #yellow {
 	width: 20px;
 	height: 20px;
 	margin: 4px;
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+.filter_color #yellow {
+	background-color: yellow;
 }
 
 .filter_color #orange {
@@ -869,15 +924,14 @@ input[type="checkbox"] {
 	font-size: 13px;
 }
 
-.maina:active,
-.maina:focus {
-	color: #50b3a2;
-}
-
 .status,
 .size,
 .action,
-.brand {
+.brand,
+.status + span,
+.size + span,
+.action + span,
+.brand + span {
 	cursor: pointer;
 }
 
@@ -911,6 +965,7 @@ input[type="checkbox"] {
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
+	z-index: 1;
 }
 
 .hit {
@@ -996,3 +1051,63 @@ display: flex;
 .catalogSlider:focus {
 	outline: none;
 }
+
+/*preloader*/
+
+/*
+.preloader {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #fff;
+	z-index: 5;
+	-webkit-transition: 1s all;
+	transition: 1s all;
+	opacity: 1;
+	visibility: visible;
+}
+
+.loader {
+	width: 50px;
+	height: 50px;
+	border: 3px solid #50b3a2;
+	border-radius: 50%;
+	border-top-color: #000;
+	position: absolute;
+	top: 50%;
+	left: 53%;
+	-webkit-transform: translate(-50%, -53%);
+	transform: translate(-50%, -53%);
+	-webkit-animation: 2s spin infinite linear;
+	animation: 1.25s spin infinite linear;
+}
+
+.done {
+	opacity: 0;
+	visibility: hidden;
+}
+
+@-webkit-keyframes spin {
+	from {
+		-webkit-transform: translate(-50%, -53%) rotate(0deg);
+		transform: translate(-50%, -53%) rotate(0deg);
+	}
+	to {
+		-webkit-transform: translate(-50%, -53%) rotate(360deg);
+		transform: translate(-50%, -53%) rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	from {
+		-webkit-transform: translate(-50%, -53%) rotate(0deg);
+		transform: translate(-50%, -53%) rotate(0deg);
+	}
+	to {
+		-webkit-transform: translate(-50%, -53%) rotate(360deg);
+		transform: translate(-50%, -53%) rotate(360deg);
+	}
+}
+*/
+
+/*preloader*/

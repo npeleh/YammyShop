@@ -5,56 +5,105 @@
 				<h1 class="nav_font">Жінкам</h1>
 			</div>
 			<div class="nav_navigation">
-				<div id="nav_popular">по популярності</div>
-				<div id="nav_cheap">спочатку дешевше</div>
-				<div id="nav_name">по назві</div>
+				<div id="nav_popular" class="nav_btn" ng-click="woman.popular('id')">по популярності</div>
+				<div id="nav_cheap" class="nav_btn" ng-click="woman.cheap('price')">спочатку дешевше</div>
+				<div id="nav_name" class="nav_btn" ng-click="woman.name('name')">по назві</div>
 			</div>
 		</div>
+		<nav id="filters">
+			<div id="menuToggleFilter">
+				<input type="checkbox" class="checkInput">
+				<span class="X"></span>
+				<span class="X"></span>
+				<span class="X"></span>
+				<ul id="menuFilter">
+					<div class="font_head none480">Ціна, грн</div>
+					<div class="filter_price_inputs">
+						<input type="text" maxlength="6" placeholder="min" id="minPrice" ng-model="woman.min">
+						<i class="filter_price_sep"></i>
+						<input type="text" maxlength="6" placeholder="max" id="maxPrice" ng-model="woman.max">
+						<button id="btn_sabmit" type="submit">OK</button>
+					</div><br>
+					<div class="font_head">Колір</div>
+					<div class="filter_color">
+						<a class="color" id="yellow" title="Жовтий" ng-click="woman.color('yellow')"></a>
+						<a class="color" id="gray" title="Сірий" ng-click="woman.color('gray')"></a>
+						<a class="color" id="blue" title="Синій" ng-click="woman.color('blue')"></a>
+						<a class="color" id="red" title="Червоний" ng-click="woman.color('red')"></a>
+						<a class="color" id="purple" title="Фіолетовий" ng-click="woman.color('purple')"></a>
+						<a class="color" id="green" title="Зелений" ng-click="woman.color('green')"></a>
+						<a class="color" id="brown" title="Коричневий" ng-click="woman.color('brown')"></a>
+						<a class="color" id="orange" title="Оранжевий" ng-click="woman.color('orange')"></a>
+						<a class="color" id="white" title="Білий" ng-click="woman.color('white')"></a>
+						<a class="color" id="black" title="Чорний" ng-click="woman.color('black')"></a>
+					</div><br>
+					<div class="font_head">Бренд</div>
+					<div class="filter_size">
+						<ul>
+							<li><label ng-click="woman.brand('Adidas')" class="brand"><input type="radio" name="r1"> Adidas <sup>2</sup></label></li>
+							<li><label ng-click="woman.brand('Converse')" class="brand"><input type="radio" name="r1"> Converse <sup>3</sup></label></li>
+							<li><label ng-click="woman.brand('New Balance')" class="brand"><input type="radio" name="r1"> New Balance <sup>3</sup></label></li>
+							<li><label ng-click="woman.brand('Polo')" class="brand"><input type="radio" name="r1"> Polo <sup>2</sup></label></li>
+							<li><label ng-click="woman.brand('Puma')" class="brand"><input type="radio" name="r1"> Puma <sup>3</sup></label></li>
+							<li><label ng-click="woman.brand('Columbia')" class="brand"><input type="radio" name="r1"> Columbia <sup>1</sup></label></li>
+							<li><label ng-click="woman.brand('Reebok')" class="brand"><input type="radio" name="r1"> Reebok <sup>2</sup></label></li>
+						</ul>
+					</div><br>
+					<div class="filter_brands">
+						<ul>
+							<li><label ng-click="woman.action('share')" class="action"><input type="radio" name="r2"> Акція <sup>2</sup></label></li>
+							<li><label ng-click="woman.action('novelty')" class="action"><input type="radio" name="r2"> Новинка <sup>3</sup></label></li>
+							<li><label ng-click="woman.action('hit')" class="action"><input type="radio" name="r2"> Хіт <sup>1</sup></label></li>
+						</ul>
+					</div>
+				</ul>
+			</div>
+		</nav>
 		<div class="nav_contaiter">
 			<div class="nav_container_boxW nav_font">
-				<div class="font_head">Ціна, грн</div>
+				<div class="font_head none480">Ціна, грн</div>
 				<div class="filter_price_inputs">
-					<input type="text" maxlength="6" value="350" id="minPrice">
+					<input type="text" maxlength="6" placeholder="min" id="minPrice" ng-model="woman.min">
 					<i class="filter_price_sep"></i>
-					<input type="text" maxlength="6" value="2500" id="maxPrice">
+					<input type="text" maxlength="6" placeholder="max" id="maxPrice" ng-model="woman.max">
 					<button id="btn_sabmit" type="submit">OK</button>
 				</div><br>
 				<div class="font_head">Колір</div>
 				<div class="filter_color">
-					<a href="#" id="yellow" title="Жовтий"></a>
-					<a href="#" id="gray" title="Сірий"></a>
-					<a href="#" id="blue" title="Синій"></a>
-					<a href="#" id="red" title="Червоний"></a>
-					<a href="#" id="purple" title="Фіолетовий"></a>
-					<a href="#" id="green" title="Зелений"></a>
-					<a href="#" id="brown" title="Коричневий"></a>
-					<a href="#" id="pink" title="Рожевий"></a>
-					<a href="#" id="white" title="Білий"></a>
-					<a href="#" id="black" title="Чорний"></a>
+					<a class="color" id="yellow" title="Жовтий" ng-click="woman.color('yellow')"></a>
+					<a class="color" id="gray" title="Сірий" ng-click="woman.color('gray')"></a>
+					<a class="color" id="blue" title="Синій" ng-click="woman.color('blue')"></a>
+					<a class="color" id="red" title="Червоний" ng-click="woman.color('red')"></a>
+					<a class="color" id="purple" title="Фіолетовий" ng-click="woman.color('purple')"></a>
+					<a class="color" id="green" title="Зелений" ng-click="woman.color('green')"></a>
+					<a class="color" id="brown" title="Коричневий" ng-click="woman.color('brown')"></a>
+					<a class="color" id="orange" title="Оранжевий" ng-click="woman.color('orange')"></a>
+					<a class="color" id="white" title="Білий" ng-click="woman.color('white')"></a>
+					<a class="color" id="black" title="Чорний" ng-click="woman.color('black')"></a>
 				</div><br>
 				<div class="font_head">Бренд</div>
 				<div class="filter_size">
 					<ul>
-						<li><a href=""><input type="checkbox"> Adidas <sup>2</sup></a></li>
-						<li><a href=""><input type="checkbox"> Converse <sup>3</sup></a></li>
-						<li><a href=""><input type="checkbox"> New Balance <sup>3</sup></a></li>
-						<li><a href=""><input type="checkbox"> Polo <sup>2</sup></a></li>
-						<li><a href=""><input type="checkbox"> Puma <sup>3</sup></a></li>
-						<li><a href=""><input type="checkbox"> Columbia <sup>1</sup></a></li>
-						<li><a href=""><input type="checkbox"> Reebok <sup>2</sup></a></li>
+						<li><label ng-click="woman.brand('Adidas')" class="brand"><input type="radio" name="r1"> Adidas <sup>2</sup></label></li>
+						<li><label ng-click="woman.brand('Converse')" class="brand"><input type="radio" name="r1"> Converse <sup>3</sup></label></li>
+						<li><label ng-click="woman.brand('New Balance')" class="brand"><input type="radio" name="r1"> New Balance <sup>3</sup></label></li>
+						<li><label ng-click="woman.brand('Polo')" class="brand"><input type="radio" name="r1"> Polo <sup>2</sup></label></li>
+						<li><label ng-click="woman.brand('Puma')" class="brand"><input type="radio" name="r1"> Puma <sup>3</sup></label></li>
+						<li><label ng-click="woman.brand('Columbia')" class="brand"><input type="radio" name="r1"> Columbia <sup>1</sup></label></li>
+						<li><label ng-click="woman.brand('Reebok')" class="brand"><input type="radio" name="r1"> Reebok <sup>2</sup></label></li>
 					</ul>
 				</div><br>
 				<div class="filter_brands">
 					<ul>
-						<li><a href=""><input type="checkbox"> Акція <sup>2</sup></a></li>
-						<li><a href=""><input type="checkbox"> Новинка <sup>3</sup></a></li>
-						<li><a href=""><input type="checkbox"> Хіт <sup>1</sup></a></li>
+						<li><label ng-click="woman.action('share')" class="action"><input type="radio" name="r2"> Акція <sup>2</sup></label></li>
+						<li><label ng-click="woman.action('novelty')" class="action"><input type="radio" name="r2"> Новинка <sup>3</sup></label></li>
+						<li><label ng-click="woman.action('hit')" class="action"><input type="radio" name="r2"> Хіт <sup>1</sup></label></li>
 					</ul>
 				</div>
 
 			</div>
 			<div class="nav_productW">
-				<div class="catalogCard" ng-repeat="item in woman.catalogW">
+				<div class="catalogCard" ng-repeat="item in woman.catalogW | filter: {'color':woman.myColor, 'action':woman.myAction, 'brand':woman.myBrand} | minMaxPrice:woman.min:woman.max | orderBy:woman.myName | orderBy:woman.myPopular | orderBy:woman.myCheap">
 					<div class="catalogImg">
 						<img ng-src="{{item.src}}">
 					</div>
